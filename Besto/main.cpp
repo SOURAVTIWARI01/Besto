@@ -1,9 +1,37 @@
 // C++ Program Compilation Using GCC 
 #include <iostream>
 using namespace std;
-int main()
+
+void print_menu(string name);
+
+int main(int arg_count , char *args[])
 {
-    cout << "Hello, Geeks!" << endl;
-      cout<< " This is a tutorial on Compiling a C++ program using GCC"<<endl;
-    return 0;
+  if (arg_count > 1){
+      string name(args[1]);
+      print_menu(name);
+  }
+  else{
+    cout << "username not supplied... exiting the program." << endl;
+  }
+      return 0;
+}
+
+void print_menu (string name){
+  int choice;
+  cout << "******\n";
+  cout << "1 - print list.\n";
+  cout << "2 - Add to list.\n";
+  cout << "3 - Delete from list.\n";
+  cout << "4 - Quit.\n";
+  cout << "Enter your choice and press selection: ";
+
+  cin >> choice;
+
+  if ( choice == 4 ){
+    exit (0);
+  }
+  else {
+    cout << "Sorry choice not implemented yet.\n";
+  }
+
 }
